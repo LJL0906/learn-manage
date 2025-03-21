@@ -101,6 +101,8 @@ import { onBeforeUnmount, onMounted, onUnmounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import { useRef } from "../../hooks";
 import { useLogin } from "@/store/modules/login";
+import { useMenus } from "@/store/modules/menus";
+import { menus } from "@/layout/components/menus/menus";
 import { VerifyCode, SliderVerifyCode } from "../../components";
 import { User, Lock, Tickets } from "@element-plus/icons-vue";
 import { type ElForm } from "element-plus";
@@ -112,6 +114,7 @@ const verifyCodeRef = ref<InstanceType<typeof VerifyCode> | null>(null);
 
 const router = useRouter();
 const loginStore = useLogin();
+const menuStore = useMenus();
 const isShow = ref(false);
 const loading = ref(false);
 const formData = useRef({
@@ -180,6 +183,18 @@ const loginSuccess = () => {
 
   // 存储用户信息
   loginStore.setUserInfo(userInfo);
+  // 菜单和面包屑
+  if (menus?.length) {
+    const { name, id, path } = menus[0];
+    menuStore.setMenus(menus);
+    menuStore.setCrumbs([
+      {
+        name,
+        id,
+        path,
+      },
+    ]);
+  }
 
   // 模拟登录接口响应
   setTimeout(() => {

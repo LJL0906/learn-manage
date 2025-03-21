@@ -20,6 +20,25 @@ const routes: RouteRecordRaw[] = [
         path: 'home',
         name: 'home',
         component: com.default.Home,
+        meta: {
+          title: '首页'
+        }
+      },
+      {
+        path: 'waterfallFlow',
+        name: 'waterfallFlow',
+        component: com.default.WaterfallFlow,
+        meta: {
+          title: '瀑布流'
+        }
+      },
+      {
+        path: 'unlimitedLoading',
+        name: 'unlimitedLoading',
+        component: com.default.UnlimitedLoading,
+        meta: {
+          title: '无限加载'
+        }
       }
     ]
   }

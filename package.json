@@ -13,6 +13,7 @@
     "@tailwindcss/vite": "^4.0.14",
     "@vueuse/core": "^13.0.0",
     "axios": "^1.8.4",
+    "be-full": "^0.1.4",
     "crypto-js": "^4.2.0",
     "dayjs": "^1.11.13",
     "element-plus": "^2.9.6",

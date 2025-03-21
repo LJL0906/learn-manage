@@ -1,5 +1,5 @@
 <template>
-  <div>123</div>
+  <div>无限加载</div>
 </template>
 
 <script lang="ts" setup></script>
