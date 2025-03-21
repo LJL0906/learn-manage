@@ -187,7 +187,7 @@ const loginSuccess = () => {
     router.replace({
       path: "/",
     });
-  }, 1000);
+  }, 500);
 };
 
 /**

@@ -8,6 +8,11 @@ interface LoginState {
   token: string
   avatar: string
   roles: string[]
+  name?: string
+  phone?: string
+  email?: string
+  hobby?: string
+  experience?: string
   permissions?: string[]
   routes?: string[]
   menus?: string[]

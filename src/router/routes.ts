@@ -14,9 +14,9 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/:pathMatch(.*)*',
     component: com.default.Layout,
+    redirect: { name: 'home' },
     children: [
       {
-
         path: 'home',
         name: 'home',
         component: com.default.Home,

@@ -6,7 +6,15 @@
     </el-aside>
     <el-container>
       <Header v-model:isCollapse="isCollapse"></Header>
-      <el-main>Main</el-main>
+      <el-main>
+        <router-view v-slot="{ Component, route }">
+          <KeepAlive>
+            <Transition name="fade" mode="out-in">
+              <component :is="Component" :key="route.fullPath"></component>
+            </Transition>
+          </KeepAlive>
+        </router-view>
+      </el-main>
     </el-container>
   </div>
 </template>
